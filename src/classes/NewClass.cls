@@ -10,7 +10,7 @@ public class NewClass {
   private void unusedMethod(){}
 
   /*
-  * This is fine.
+  * This is fine. Will said so.
   */
   public boolean isBadExample(){ 
     return true; 
