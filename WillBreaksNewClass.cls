@@ -16,7 +16,7 @@ public class WillBreaksNewClassNewClass {
     return true; 
   } 
 
-  
+  @SuppressWarnings('all')
   public void terribleCode(Integer param){
     param =1;
   }
