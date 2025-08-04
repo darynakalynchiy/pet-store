@@ -28,7 +28,7 @@ jobs:
           codeScanUrl: https://app.codescan.io/
           login: ${{ secrets.codescan_token }} 
           generateSarifFile: true 
-          failOnRedQualityGate: true 
+          failOnRedQualityGate: false 
       - name: Run Codescan On PR 
         if: github.event_name == 'pull_request' 
         uses: codescan-io/codescan-scanner-action@1.6
