@@ -36,7 +36,7 @@ jobs:
           organization: daryna
           projectKey: darynakalynchiy-pet-store
           codeScanUrl: https://app.codescan.io/
-          login: ${{ secrets.codescan_token }} 
+          login: ${{ secrets.codescan_pet_store }} 
           scanChangedFilesOnly: true 
           generateSarifFile: true 
           failOnRedQualityGate: true 
