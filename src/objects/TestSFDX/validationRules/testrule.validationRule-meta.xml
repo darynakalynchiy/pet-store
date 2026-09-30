@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Require_Industry_For_Enterprise</fullName>
+    <active>true</active>
+    <description>Enterprise accounts with annual revenue over 10M must have an Industry and a valid 10-digit Phone number.</description>
+    <errorConditionFormula>AND(
+    ISPICKVAL(Type, &quot;Customer - Direct&quot;),
+    AnnualRevenue &gt; 10000000,
+    OR(
+        ISBLANK(TEXT(Industry)),
+        NOT(REGEX(Phone, &quot;^\\D*(\\d\\D*){10}$&quot;))
+    ),
+    NOT($Permission.Bypass_Validation_Rules)
+)</errorConditionFormula>
+    <errorDisplayField>Industry</errorDisplayField>
+    <errorMessage>Enterprise direct customers (revenue over $10M) require an Industry and a valid 10-digit phone number.</errorMessage>
+</ValidationRule>
